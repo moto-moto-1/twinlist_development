@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/react', function () {
     return view('react');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
