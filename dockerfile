@@ -29,7 +29,8 @@ WORKDIR /var/www/html
 
 
 
-# RUN docker-php-ext-install mysqli pdo pdo_mysql zip mbstring xml json ctype bcmath openssl tokenizer
+RUN docker-php-ext-install mysqli pdo pdo_mysql 
+# mbstring zip xml json ctype bcmath openssl tokenizer
 RUN a2enmod rewrite
 RUN a2enmod ssl
 
