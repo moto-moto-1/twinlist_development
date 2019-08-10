@@ -4,6 +4,7 @@ networks:
   front: 
 services: 
   laraveldatabase: 
+    restart: always
     image: mysql:5.7
     volumes: # mount custom config at runtime 
       - ./mysqldata:/docker-entrypoint-initdb.d
@@ -20,6 +21,7 @@ services:
         aliases: 
         - dbserver  
   laravelweb: 
+    restart: always
     #image: php:7.2-apache
     build:
       context: .
@@ -35,6 +37,7 @@ services:
       - 4443:443
   laravelphpmyadmin:
     image: phpmyadmin/phpmyadmin
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: "root"
       PMA_HOST: "laraveldatabase"
@@ -44,6 +47,7 @@ services:
       - 9090:80  
   node:
     image: "node:8-alpine"
+    #restart: always
     # user: "node"
     working_dir: /home/node/app
     # environment:
