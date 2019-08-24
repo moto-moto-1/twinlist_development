@@ -29,10 +29,11 @@ WORKDIR /var/www/html
 
 
 
-RUN docker-php-ext-install mysqli pdo pdo_mysql 
-# mbstring zip xml json ctype bcmath openssl tokenizer
+RUN docker-php-ext-install mysqli pdo pdo_mysql bcmath zip
+# mbstring xml json ctype openssl tokenizer
 RUN a2enmod rewrite
 RUN a2enmod ssl
+RUN apt-get install -y zip git
 
 RUN sed -i "s|DocumentRoot.*|DocumentRoot /var/www/html/public|g" /etc/apache2/sites-available/000-default.conf
 RUN a2dissite 000-default.conf

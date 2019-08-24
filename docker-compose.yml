@@ -56,6 +56,8 @@ services:
       - ./laravel:/home/node/app
     networks: 
      - back
-    command: "npm install"
-    command: "npm run development"
-    # command: "npm run watch -- --watch-poll"     
+    #command: "npm install"
+    # command: "npm run development"
+    #command: "npm install react-router-dom react-redux react-datepicker redux redux-thunk"
+
+    command: "npm run watch -- --watch-poll"     

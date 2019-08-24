@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import Main from "../Main"
 
 export default class Example extends Component {
     render() {
@@ -9,9 +10,13 @@ export default class Example extends Component {
                     <div className="col-md-8">
                         <div className="card">
                             <div className="card-header">React Example Component</div>
-                            
-                            <div className="card-body">I'm a react example component!</div>
+                          <Main/>  
+                            <div className="card-body">I'm a react 2 example component!</div>
+                    
                         </div>
+
+
+
                     </div>
                 </div>
             </div>
